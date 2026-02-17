@@ -22,7 +22,7 @@ body {
 
 /* --- Cabecera y Navegación --- */
 header {
-    background-color: var(--azul-profundo);
+    background-color: #0A3143;
     background-size: cover;
     color: var(--blanco);
     padding: 1rem 2rem;
@@ -57,9 +57,21 @@ header {
     align-items: center;
 }
 
+
+@keyframes entrada-logo {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 .logo img {
     height: 90px;
     width: auto;
+    animation: entrada-logo 1.2s ease-out;
+    transition: transform 0.8s ease-in-out;
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
 }
 
 .nombre-marca {
@@ -104,7 +116,7 @@ nav a.activo {
 
 .hero {
     height: 85vh;
-    background: linear-gradient(rgba(10, 49, 67, 0.7), rgba(10, 49, 67, 0.5)), url('imagenes/Banner.png');
+    background: linear-gradient(rgba(10, 49, 67, 0.7), rgba(10, 49, 67, 0.5)), url('../imagenes/Banner.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -227,7 +239,7 @@ nav a.activo {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-bottom: 4px solid var(--naranja-vivo);
+    border: 2px solid var(--naranja-vivo);
 }
 
 .valor-card h3 {
@@ -257,7 +269,7 @@ footer p {
 }
 
 .banner-interno {
-    background: linear-gradient(rgba(10, 49, 67, 0.7), rgba(10, 49, 67, 0.5)), url('imagenes/Banner.png');
+    background: linear-gradient(rgba(10, 49, 67, 0.7), rgba(10, 49, 67, 0.5)), url('../imagenes/Banner.png');
     background-size: cover;
     background-position: center;
     color: var(--blanco);
@@ -424,6 +436,8 @@ footer p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    background-color: var(--blanco);
+    border-right: 5px solid var(--naranja-vivo);
 }
 
 .doble-derecha {
@@ -443,4 +457,11 @@ footer p {
     color: var(--azul-profundo);
     font-weight: bold;
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .doble-izquierda {
+        border-right: none;
+        border-bottom: 5px solid var(--naranja-vivo);
+    }
 }
